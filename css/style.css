@@ -1,0 +1,27 @@
+
+
+body {
+	background-color: lightblue;
+}
+
+header.header {
+	background-color: pink;
+}
+
+h1 {
+	color: white;
+	display: inline-block;
+	border: 2px solid black;
+	border-radius: 15px;
+	padding: 10px;
+	text-align: center;
+}
+.center-container {
+	text-align: center;
+	
+}
+
+p { 
+	font-family: monospace;
+	font-size: 20px;
+}

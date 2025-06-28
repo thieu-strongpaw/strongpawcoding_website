@@ -1,3 +1,6 @@
+# ignore deploy utility
+deploy.sh
+
 # ignore all files starting with . or ~
 .*
 ~*
