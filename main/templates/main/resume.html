@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" href="css/style.css">
-<meta charset="UTF-8">
-<title>
-Strongpaw Coding | Main 
-</title>
-</head>
+{% extends "base.html" %}
 
-<body>
-<header class="center-container">
-<h1>Welcome to StrongpawCoding.com</h1>
-<nav>
-<a href="index.html">Main</a>
-<a href="resume.html">Resume</a>
-
-</nav>
-</header>
-<hr>
-<main>
+{% block page_content %}
 
 <!-- This begins version 1 of the resume -->
 <article>
@@ -85,14 +67,4 @@ Strongpaw Coding | Main
 	<p>I love my garden, baking, and a varity of silly but creative projects</p>
 </section>
 </article>
-
-
-</main>
-<hr>
-<footer>
-<p>Maintained by me :)</p>
-<p>All rights reserved</p>
-<p>Contact: storngpawcoding@gmail.com</p>
-</footer>
-</body>
-</html>
+{% endblock page_content %}

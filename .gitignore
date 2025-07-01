@@ -1,5 +1,17 @@
 # ignore deploy utility
 deploy.sh
+ 
+# ignore .venv files
+venv/
+env/ 
+ENV/
+
+# ignore django files
+db.sqlite3
+*.log
+local_settings.py
+media/
+staticfiles/
 
 # ignore all files starting with . or ~
 .*

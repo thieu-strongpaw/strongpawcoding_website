@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<h1>Blogs</h1>
+<div class="row">
+{% for blog in blogs %}
+<div class="blog-div">
+	<h5 class="card-title">{{ blog.title }}</h5>
+	<p class="blog-text">{{ blog.description }}</p>
+	<a href="{% url 'spblog_detail' blog.pk %}">Read More</a>
+</div>
+{% endfor %}
+</div>
+{% endblock page_content %}
