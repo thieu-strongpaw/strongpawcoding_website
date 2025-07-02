@@ -23,10 +23,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s%xdo80)=f(c#oag8ns(q=qoia=7l9$)je2-k#@mn*mby7%y=l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
+        'aboutme.strongpawcoding.com',
+        'localhost',
+        '127.0.0.1',
         '192.168.0.151',
+        ]
+
+CSRF_TRUSTED_ORIGINS = [
+        'https://aboutme.strongpawcoding.com',
         ]
 
 
@@ -121,6 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = "/var/www/strongpawcoding/strongpawcoding_website/static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
