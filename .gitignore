@@ -6,6 +6,12 @@ venv/
 env/ 
 ENV/
 
+# ignore python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
 # ignore django files
 db.sqlite3
 *.log
