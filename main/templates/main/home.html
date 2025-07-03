@@ -4,5 +4,6 @@
 <p>My name is Matt Garcia and I'm glad you're here. I've made this place for two reasons. First, to share my passion for learning about cooking, gardening and programming. Second, to shamelessly shill for a job where I can write code.</p>
 <br>
 <p>Here is a picture of one of the most purr-fect cats, enjoy.</p>
-<img src="img/shadow_sitting.jpg" alt="A black cat sitting on a livingroom table">
+{% load static %}
+<img src="{% static 'main/shadow_sitting.jpg' %}" alt="A black cat sitting on a livingroom table">
 {% endblock page_content %}

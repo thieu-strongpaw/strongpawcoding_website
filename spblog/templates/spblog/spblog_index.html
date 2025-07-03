@@ -5,10 +5,14 @@
 <h1>Blogs</h1>
 <div class="row">
 {% for blog in blogs %}
-<div class="blog-div">
+<div class="col-md-4">
+	<div class="card mb-2">
+	<div class="card-body">
 	<h5 class="card-title">{{ blog.title }}</h5>
 	<p class="blog-text">{{ blog.description }}</p>
 	<a href="{% url 'spblog_detail' blog.pk %}">Read More</a>
+	</div>
+	</div>
 </div>
 {% endfor %}
 </div>
