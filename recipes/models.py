@@ -5,6 +5,11 @@ from django.urls import reverse
 
 class Recipe(models.Model):
     title = models.CharField(max_length=255)
+    ingredients = models.TextField(
+            blank=True,
+            default="",
+            help_text="List of ingredients, one per line or as free text."
+            )
     instructions = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
