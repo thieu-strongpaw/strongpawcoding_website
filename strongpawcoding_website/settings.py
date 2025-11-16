@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-s%xdo80)=f(c#oag8ns(q=qoia=7l9$)je2-k#@mn*mby7%y=l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
         'aboutme.strongpawcoding.com',
@@ -40,14 +40,19 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'main.apps.MainConfig',
-    'spblog.apps.SpblogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 3ed party
+    "crispy_forms",
+    "crispy_bootstrap5",
+    # local apps
+    "accounts",
+    "pages",
+    "recipes",
 ]
 
 MIDDLEWARE = [
@@ -134,6 +139,14 @@ STATIC_ROOT = "/var/www/strongpawcoding/strongpawcoding_website/static"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = "accounts.CustomUser"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 MEDIA_ROOT = BASE_DIR / "uploads/"
 MEDIA_URL = "media/"
