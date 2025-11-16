@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Recipes{% endblock title %}
+
+{% block content %}
+{% for recipe in recipe_list %}
+<div class="card">
+    <div class="card-header">
+	<span class="fw-bold">
+	    <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
+	</span> &middot;
+	<span class="text-muted">by {{ recipe.author }} |
+	    {{ recipe.date }}</span>
+    </div>
+    <div class="card-body">
+	{{ recipe.body }}
+	{% if recipe.author.pk == request.user.pk %}
+	<a href="{% url 'recipe_edit' recipe.pk %}">Edit</a>
+	<a href="{% url 'recipe_delete' recipe.pk %}">Delete</a>
+	{% endif %}
+	<a href="{{ recipe.get_absolute_url }}">New Comment</a>
+    </div>
+    <div class="card-footer">
+	{% for comment in recipe.comment_set.all %}
+	<p>
+	<span class="fw-bold">
+	    {{ comment.author }} &middot;
+	</span>
+	{{ comment.comment }}
+	</p>
+	{% endfor %}
+    </div>
+</div>
+<br />
+{% endfor %} 
+{% endblock content %}
