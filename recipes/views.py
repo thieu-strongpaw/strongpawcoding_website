@@ -83,6 +83,7 @@ class RecipeCreateView(LoginRequiredMixin, CreateView):
     template_name = "recipe_new.html"
     fields = (
         "title",
+        "ingredients",
         "instructions",
     )
 

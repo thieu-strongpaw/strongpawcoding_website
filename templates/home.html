@@ -4,7 +4,8 @@
 
 {% block content %} 
 {% if user.is_authenticated %} 
-<p>Hi {{ user.username }}! You are {{ user.age }} years old.</p>
+<p>Hi {{ user.username }}! Welcome to The Commons.</p>
+<p>Right now we just have a recipe, maybe... feel free to add more.</p>
 <form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
     <button type="submit">Log Out</button>
