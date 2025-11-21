@@ -32,7 +32,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
     )
 
-    def __str___(self):
+    def __str__(self):
         return self.comment
 
     def get_absolute_url(self):
