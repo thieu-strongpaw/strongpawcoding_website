@@ -9,8 +9,17 @@
 	<span class="fw-bold">
 	    <a href="{% url 'recipe_detail' recipe.pk %}">{{ recipe.title }}</a>
 	</span> &middot;
-	<span class="text-muted">by {{ recipe.author }} |
-	    {{ recipe.date }}</span>
+	<span class="text-muted">by 
+		{% if recipe.author.profile %}
+		<a href="{ url 'profile_detail' recipe.author.profile.pk %}">
+			{{ recipe.author.username }} 
+		</a>
+		{% else %}
+		{{ recipe.author.username }}
+		{% endif %}
+		| {{ recipe.date }}
+	</span>
+	
     </div>
     <div class="card-body">
 	{{ recipe.body }}

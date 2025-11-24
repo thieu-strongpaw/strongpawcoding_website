@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock title %}
+
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <span class="fw-bold">{{ object.user.username }}</span>
+  </div>
+  <div class="card-body">
+    {% if object.avatar %}
+      <img src="{{ object.avatar.url }}" alt="{{ object.user.username }} avatar"
+           class="img-thumbnail mb-3" style="max-width: 200px;">
+    {% else %}
+      <p class="text-muted">No profile picture yet.</p>
+    {% endif %}
+
+    {% if object.description %}
+      <p>{{ object.description|linebreaksbr }}</p>
+    {% else %}
+      <p class="text-muted">No description provided.</p>
+    {% endif %}
+
+    {% if object.user.pk == request.user.pk %}
+      <a href="{% url 'profile_edit' object.pk %}" class="btn btn-info">Edit Profile</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
+
