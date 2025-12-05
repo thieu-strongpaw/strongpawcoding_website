@@ -26,5 +26,6 @@ class MyProfileView(LoginRequiredMixin, DetailView):
     model = Profile
     template_name = "profile_detail.html"
     
-    def get_object(self, queryset= None):
-        return get_object_or_404(Profile, user=self.request.user)
+    def get_object(self):
+        return self.request.user.profile
+
