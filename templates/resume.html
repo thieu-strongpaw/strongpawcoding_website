@@ -3,5 +3,13 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %} 
+{% load static %}
 <p> resume page </p>
+<a 
+	href="{% static 'resume/resume_pdf_MattG.pdf' %}"
+	class="btn btn-primary"
+	download
+>
+Download Resume (PDF)
+</a>
 {% endblock content %}
